@@ -1,6 +1,11 @@
 @font-face {
     font-family: 'Space_Mono';
-    src: url('./Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+    src: url('../google_fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../google_fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 
 body {

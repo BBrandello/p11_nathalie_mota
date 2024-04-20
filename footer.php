@@ -1,3 +1,5 @@
+<?php get_template_part('templates/modal', 'contact'); ?>
+
 <footer id="footer">
     <?php wp_nav_menu(array('theme_location' => 'footer')); ?>
 </footer>

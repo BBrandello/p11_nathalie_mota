@@ -1,0 +1,47 @@
+.modal {
+  position: fixed;
+  left: 15%;
+  top: 12%;
+  width: 70%;
+  height: 80%;
+  z-index: 999;
+  transform: translateX(200%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-ouverte {
+  transform: translateX(0);
+  background-color: #fff;
+}
+
+.modal-content {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.wpcf7-form-control {
+  width: 260px;
+  height: 40px;
+  border: solid 1px #b8bbc2;
+  border-radius: 8px;
+}
+
+.message-modal .wpcf7-form-control {
+  height: 210px;
+}
+
+.wpcf7-submit {
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  height: 50px;
+  width: 266px;
+  border: solid 1px #d8d8d8;
+  background-color: #d8d8d8;
+  border-radius: 0;
+}

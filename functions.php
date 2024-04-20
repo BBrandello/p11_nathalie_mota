@@ -1,11 +1,20 @@
 <?php
 
-function nathalie_mota_register_styles()
+function nathalie_mota_register_styles_and_scripts()
 {
-    wp_enqueue_style('style', get_template_directory_uri() . '/css/style_body_header_footer.css', array(), '1.0');
+    // Enregistrement des styles CSS
+    wp_enqueue_style('style_body_header_footer', get_template_directory_uri() . '/css/style_body_header_footer.css', array(), '1.0');
+    wp_enqueue_style('style_modal_contact', get_template_directory_uri() . '/css/modal-contact.css', array(), '1.0');
+
+    // Enregistrement du script JavaScript
+    wp_register_script('modal-script', get_template_directory_uri() . '/modal.js', array(), '1.0', true);
+
+    // Chargement du script JavaScript
+    wp_enqueue_script('modal-script');
 }
 
-add_action('wp_enqueue_scripts', 'nathalie_mota_register_styles');
+add_action('wp_enqueue_scripts', 'nathalie_mota_register_styles_and_scripts');
+
 
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
