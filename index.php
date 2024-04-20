@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
+<?php get_header(); ?>
 
-<head></head>
+<h1>Coucou</h1>
 
-<body>
-    <h1>Coucou !</h1>
-</body>
-
-</html>
+<?php get_footer(); ?>
