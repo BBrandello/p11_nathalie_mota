@@ -7,7 +7,7 @@ function nathalie_mota_register_styles_and_scripts()
     wp_enqueue_style('style_modal_contact', get_template_directory_uri() . '/css/modal-contact.css', array(), '1.0');
 
     // Enregistrement du script JavaScript
-    wp_register_script('modal-script', get_template_directory_uri() . '/modal.js', array(), '1.0', true);
+    wp_register_script('modal-script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true);
 
     // Chargement du script JavaScript
     wp_enqueue_script('modal-script');
