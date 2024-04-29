@@ -10,40 +10,40 @@
   transform: translate(-50%, -50%) scale(1);
   background-color: #fff;
 }
-.modal-ouverte .modal-content {
+.modal .modal-content {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.modal-ouverte .modal-content img {
+.modal .modal-content img {
   margin: 20px 0;
 }
-.modal-ouverte .modal-content .wpcf7 {
+.modal .modal-content .wpcf7 {
   width: 266px;
   display: flex;
   justify-content: center;
 }
-.modal-ouverte .modal-content .wpcf7-form {
+.modal .modal-content .wpcf7-form {
   margin-top: 20px;
 }
-.modal-ouverte .modal-content .wpcf7-form-control {
+.modal .modal-content .wpcf7-form-control {
   width: 266px;
   height: 40px;
   border: solid 1px #b8bbc2;
   border-radius: 8px;
 }
-.modal-ouverte .modal-content .wpcf7 .message-modal {
+.modal .modal-content .wpcf7 .message-modal {
   height: 210px;
 }
-.modal-ouverte .modal-content .wpcf7 .message-modal .wpcf7-form-control-wrap {
+.modal .modal-content .wpcf7 .message-modal .wpcf7-form-control-wrap {
   height: 210px;
 }
-.modal-ouverte .modal-content .wpcf7 .message-modal .wpcf7-form-control {
+.modal .modal-content .wpcf7 .message-modal .wpcf7-form-control {
   height: 210px;
 }
-.modal-ouverte .modal-content .wpcf7-submit {
+.modal .modal-content .wpcf7-submit {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   height: 50px;

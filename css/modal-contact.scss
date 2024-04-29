@@ -9,55 +9,55 @@
     &-ouverte {
         transform: translate(-50%, -50%) scale(1);
         background-color: #fff;
+    }
 
-        .modal-content {
-            font-family: 'Poppins', sans-serif;
-            font-size: 12px;
+    .modal-content {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            margin: 20px 0;
+        }
+
+        .wpcf7 {
+            width: 266px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
 
-            img {
-                margin: 20px 0;
+                &-form {
+                    margin-top: 20px;
+
+                    &-control {
+                        width: 266px;
+                        height: 40px;
+                        border: solid 1px #b8bbc2;
+                        border-radius: 8px;
+                    }
+                }
+
+            .message-modal {
+                height: 210px;
+
+                .wpcf7-form-control-wrap {
+                    height: 210px;
+                }
+
+                .wpcf7-form-control {
+                    height: 210px;
+                }
             }
 
-            .wpcf7 {
-                width: 266px;
-                display: flex;
-                justify-content: center;
-
-                    &-form {
-                        margin-top: 20px;
-
-                        &-control {
-                            width: 266px;
-                            height: 40px;
-                            border: solid 1px #b8bbc2;
-                            border-radius: 8px;
-                        }
-                    }
-    
-                .message-modal {
-                    height: 210px;
-
-                    .wpcf7-form-control-wrap {
-                        height: 210px;
-                    }
-
-                    .wpcf7-form-control {
-                        height: 210px;
-                    }
-                }
-    
-                &-submit {
-                    font-family: 'Poppins', sans-serif;
-                    font-size: 12px;
-                    height: 50px;
-                    width: 272px;
-                    border: solid 1px #d8d8d8;
-                    background-color: #d8d8d8;
-                    border-radius: 0;
-                }
+            &-submit {
+                font-family: 'Poppins', sans-serif;
+                font-size: 12px;
+                height: 50px;
+                width: 272px;
+                border: solid 1px #d8d8d8;
+                background-color: #d8d8d8;
+                border-radius: 0;
             }
         }
     }
