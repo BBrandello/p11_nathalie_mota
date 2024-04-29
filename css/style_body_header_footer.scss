@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Space_Mono';
+    src: url('../google_fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../google_fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Space_Mono', sans-serif;
+
+    #header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 80%;
+        margin: auto;
+        height: 80px;
+
+        #menu-top-barre-header {
+            display: flex;
+            list-style: none;
+
+            #menu-item-14,
+            #menu-item-18 {
+                margin-left: 60px;
+            }
+        }
+    }
+
+    #footer {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        border-top: solid 1px;
+
+        #menu-footer {
+            display: flex;
+            padding: 20px 0;
+
+            #menu-item-27,
+            #menu-item-26 {
+                margin-left: 60px;
+            }
+        }
+    }
+
+    #header a,
+    #footer a {
+        text-transform: uppercase;
+        font-size: 16px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    #menu-top-barre-header,
+    #menu-footer {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+}
