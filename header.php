@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
     <header id="header">
         <a href="<?php echo home_url('/'); ?>">
-            <img src="<?php echo get_template_directory_uri(); ?>/images/nathalie_mota_logo.png" alt="Logo">
+            <img src="<?php echo get_template_directory_uri(); ?>/images/img-header/nathalie_mota_logo.png" alt="Logo">
         </a>
 
         <?php

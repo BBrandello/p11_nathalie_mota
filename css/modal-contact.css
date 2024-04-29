@@ -1,47 +1,54 @@
 .modal {
   position: fixed;
-  left: 15%;
-  top: 12%;
-  width: 70%;
-  height: 80%;
   z-index: 999;
-  transform: translateX(200%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
   transition: transform 0.3s ease-in-out;
-  display: flex;
-  justify-content: center;
 }
-
 .modal-ouverte {
-  transform: translateX(0);
+  transform: translate(-50%, -50%) scale(1);
   background-color: #fff;
 }
-
-.modal-content {
-  font-family: 'Poppins', sans-serif;
+.modal-ouverte .modal-content {
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 100%;
 }
-
-.wpcf7-form-control {
-  width: 260px;
+.modal-ouverte .modal-content img {
+  margin: 20px 0;
+}
+.modal-ouverte .modal-content .wpcf7 {
+  width: 266px;
+  display: flex;
+  justify-content: center;
+}
+.modal-ouverte .modal-content .wpcf7-form {
+  margin-top: 20px;
+}
+.modal-ouverte .modal-content .wpcf7-form-control {
+  width: 266px;
   height: 40px;
   border: solid 1px #b8bbc2;
   border-radius: 8px;
 }
-
-.message-modal .wpcf7-form-control {
+.modal-ouverte .modal-content .wpcf7 .message-modal {
   height: 210px;
 }
-
-.wpcf7-submit {
-  font-family: 'Poppins', sans-serif;
+.modal-ouverte .modal-content .wpcf7 .message-modal .wpcf7-form-control-wrap {
+  height: 210px;
+}
+.modal-ouverte .modal-content .wpcf7 .message-modal .wpcf7-form-control {
+  height: 210px;
+}
+.modal-ouverte .modal-content .wpcf7-submit {
+  font-family: "Poppins", sans-serif;
   font-size: 12px;
   height: 50px;
-  width: 266px;
+  width: 272px;
   border: solid 1px #d8d8d8;
   background-color: #d8d8d8;
   border-radius: 0;
-}
+}/*# sourceMappingURL=modal-contact.css.map */
