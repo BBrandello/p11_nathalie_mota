@@ -1,4 +1,4 @@
-<?php get_template_part('templates/modal', 'contact'); ?>
+<?php get_template_part('partials/modal', 'contact'); ?>
 
 <footer id="footer">
     <?php wp_nav_menu(array('theme_location' => 'footer')); ?>

@@ -3,8 +3,9 @@
 function nathalie_mota_register_styles_and_scripts()
 {
     // Enregistrement des styles CSS
-    wp_enqueue_style('style_body_header_footer', get_template_directory_uri() . '/css/style_body_header_footer.css', array(), '1.0');
-    wp_enqueue_style('style_modal_contact', get_template_directory_uri() . '/css/modal-contact.css', array(), '1.0');
+    wp_enqueue_style('style_body_header_footer', get_template_directory_uri() . '/scss/style_body_header_footer.css', array(), '1.0');
+    wp_enqueue_style('style_modal_contact', get_template_directory_uri() . '/scss/modal-contact.css', array(), '1.0');
+    wp_enqueue_style('style_menu_burger_header', get_template_directory_uri() . '/scss/menu-burger-header.css', array(), '1.0');
 
     // Enregistrement du script JavaScript
     wp_register_script('modal-script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true);

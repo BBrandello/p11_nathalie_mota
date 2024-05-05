@@ -1,3 +1,5 @@
+<div class="fond-sombre-modale"></div>
+
 <div id="contactModal" class="modal">
     <div class="modal-content">
         <!-- Intégration du formulaire Contact Form 7 -->

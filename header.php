@@ -23,6 +23,16 @@
             )
         );
         ?>
+
+        <div class="menu-burger-header">
+            <div class="ligne-menu-burger-header"></div>
+            <div class="ligne-menu-burger-header"></div>
+            <div class="ligne-menu-burger-header"></div>
+        </div>
+
+        <div class="menu-burger-header-content">
+            <?php get_template_part('partials/menu', 'burger-header'); ?>
+        </div>
     </header>
 
     <?php wp_body_open(); ?>
