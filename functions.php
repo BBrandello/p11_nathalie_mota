@@ -6,11 +6,15 @@ function nathalie_mota_register_styles_and_scripts()
     wp_enqueue_style('style_body_header_footer', get_template_directory_uri() . '/scss/style_body_header_footer.css', array(), '1.0');
     wp_enqueue_style('style_modal_contact', get_template_directory_uri() . '/scss/modal-contact.css', array(), '1.0');
     wp_enqueue_style('style_menu_burger_header', get_template_directory_uri() . '/scss/menu-burger-header.css', array(), '1.0');
+    wp_enqueue_style('style_single_photo', get_template_directory_uri() . '/scss/style-single-photo.css', array(), '1.0');
 
-    // Enregistrement du script JavaScript
+    //Enregistrement jQuery
+    wp_enqueue_script('jquery');
+
+    // Enregistrement du script JavaScript modale
     wp_register_script('modal-script', get_template_directory_uri() . '/js/scripts.js', array(), '1.0', true);
 
-    // Chargement du script JavaScript
+    // Chargement du script JavaScript moofale
     wp_enqueue_script('modal-script');
 }
 
