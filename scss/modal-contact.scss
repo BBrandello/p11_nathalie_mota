@@ -1,12 +1,12 @@
 .fond-sombre-modale {
     position: fixed;
-    z-index: 998; /* Placez-le sous la modal */
+    z-index: 998;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
-    display: none; /* Masquez-le par défaut */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
 }
 
 .modal {
