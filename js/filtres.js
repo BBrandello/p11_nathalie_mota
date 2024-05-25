@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
         var category = $('#filtre-categories').val();
         var format = $('#filtre-formats').val();
         var date = $('#filtre-dates').val();
+        var nonce = ajax_object.filter_nonce;
 
         $.ajax({
             url: ajax_object.ajax_url,
@@ -12,10 +13,11 @@ jQuery(document).ready(function ($) {
                 category: category,
                 format: format,
                 date: date,
-                nonce: ajax_object.nonce
+                nonce: nonce
             },
             success: function (response) {
                 $('.photos-home-header').html(response);
+                $('#charger-plus-content-home').data('page', 1); // Reset the page number
             },
             error: function (error) {
                 console.log('Erreur:', error);

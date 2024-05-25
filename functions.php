@@ -19,17 +19,20 @@ function nathalie_mota_register_styles_and_scripts()
     // Enregistrement du script JavaScript des filtres
     wp_enqueue_script('filtres', get_template_directory_uri() . '/js/filtres.js', array('jquery'), '1.0', true);
 
+    //Enregistrement du script JavaScript du load-more de la page d'accueil
+    wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more-content-home.js', array('jquery'), '1.0', true);
+
     // Passer des variables PHP vers JavaScript
     wp_localize_script(
         'filtres',
         'ajax_object',
         array(
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('filter_nonce')
+            'filter_nonce' => wp_create_nonce('filter_nonce'),
+            'load_more_nonce' => wp_create_nonce('load_more_nonce')
         )
     );
 }
-
 add_action('wp_enqueue_scripts', 'nathalie_mota_register_styles_and_scripts');
 
 // Ajouter la prise en charge des images mises en avant
@@ -60,7 +63,8 @@ function filtres_articles()
     // Arguments de la requête pour WP_Query
     $args = array(
         'post_type' => 'photo',
-        'posts_per_page' => -1,
+        'posts_per_page' => 8,
+        'paged' => 1,
     );
 
     // Ajoutez des conditions pour filtrer en fonction des valeurs des filtres
@@ -113,3 +117,36 @@ function filtres_articles()
 // Ajouter une action pour gérer la requête AJAX
 add_action('wp_ajax_filter_posts', 'filtres_articles');
 add_action('wp_ajax_nopriv_filter_posts', 'filtres_articles');
+
+// Fonction pour charger plus d'articles
+function charger_plus_articles()
+{
+    check_ajax_referer('load_more_nonce', 'nonce');
+
+    $paged = isset($_POST['page']) ? sanitize_text_field($_POST['page']) : 1;
+
+    $args = array(
+        'post_type' => 'photo',
+        'posts_per_page' => 8, // Charger 8 articles à la fois
+        'paged' => $paged, // Page actuelle
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            if ($image) {
+                echo '<a href="' . esc_url(get_permalink()) . '"><img src="' . esc_url($image) . '" alt="' . get_the_title() . '"></a>';
+            }
+        }
+        wp_reset_postdata();
+    }
+
+    wp_die();
+}
+
+// Ajouter une action pour gérer la requête AJAX
+add_action('wp_ajax_load_more_posts', 'charger_plus_articles');
+add_action('wp_ajax_nopriv_load_more_posts', 'charger_plus_articles');

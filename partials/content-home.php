@@ -33,13 +33,14 @@
         <?php
         $args = array(
             'post_type' => 'photo',
-            'posts_per_page' => -1,
+            'posts_per_page' => 8,
+            'paged' => 1,
         );
 
-        $articles = get_posts($args);
+        $articles = new WP_Query($args);
 
         // Vérifie s'il y a des articles
-        if ($articles) {
+        if ($articles->have_posts()) {
             // code à exécuter si des articles sont trouvés
             echo '<div class="photos-home-header">';
             foreach ($articles as $post) {
@@ -57,4 +58,5 @@
         }
         ?>
     </div>
+    <button id="charger-plus-content-home" data-page="1">Charger plus</button>
 </article>
