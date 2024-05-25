@@ -1,0 +1,75 @@
+.article-content-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.article-content-home .photo-event-header {
+  width: 100%;
+}
+.article-content-home .photo-event-header img {
+  width: 100%;
+}
+.article-content-home .filtres-articles-content-home {
+  max-width: 80%;
+}
+.article-content-home .filtres-articles-content-home .filtres {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.article-content-home .filtres-articles-content-home .filtres #filtre-categories,
+.article-content-home .filtres-articles-content-home .filtres #filtre-format,
+.article-content-home .filtres-articles-content-home .filtres #filtre-date {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 260px;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid 2px #d8d8d8;
+}
+@media (max-width: 425px) {
+  .article-content-home .filtres-articles-content-home .filtres {
+    margin-top: 24px;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .article-content-home .filtres-articles-content-home .filtres div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+}
+.article-content-home .filtres-articles-content-home .photos-home-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.article-content-home .filtres-articles-content-home .photos-home-header a {
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+}
+.article-content-home .filtres-articles-content-home .photos-home-header img {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 425px) {
+  .article-content-home .filtres-articles-content-home .photos-home-header a {
+    width: 100%;
+  }
+  .article-content-home .filtres-articles-content-home .photos-home-header img {
+    margin-top: 24px;
+  }
+}
+@media (max-width: 425px) {
+  .article-content-home {
+    margin-bottom: 40px;
+  }
+}/*# sourceMappingURL=style-home-page.css.map */

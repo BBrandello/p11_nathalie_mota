@@ -50,6 +50,23 @@
                     }
                 }
             }
+
+            &-open {
+                display: flex;
+                justify-content: center;
+
+                .barre-pour-croix-1 {
+                    transform: rotate(-45deg) translateX(-2px);
+                }
+
+                .barre-pour-croix-2 {
+                    opacity: 0;
+                }
+
+                .barre-pour-croix-3 {
+                    transform: rotate(45deg) translateX(-2px);
+                }
+            }
         }
     }
 }

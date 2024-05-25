@@ -1,7 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Gestion du menu burger (version mobile)
-    document.querySelector('.menu-burger-header').addEventListener('click', function () {
-        document.querySelector('.menu-burger-header-content').classList.toggle('menu-burger-header-content-open');
+    var menuBurger = document.querySelector('.menu-burger-header');
+    var menuContent = document.querySelector('.menu-burger-header-content');
+
+    menuBurger.addEventListener('click', function () {
+        // Toggle de la classe pour ouvrir/fermer le menu
+        menuContent.classList.toggle('menu-burger-header-content-open');
+
+        // Toggle de la classe pour afficher/cacher la croix
+        menuBurger.classList.toggle('menu-burger-header-open');
     });
 
     // Gestion de la modale de contact
@@ -14,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function openModal(referenceValue) {
         modal.classList.add('modal-ouverte');
         overlayModale.style.display = 'block';
-        // Prérempli le champ "RÉF. PHOTO" avec la valeur de la référence dans le formulaire Contact Form 7
+        // Préremplir le champ "RÉF. PHOTO" avec la valeur de la référence dans le formulaire Contact Form 7
         refPhotoInput.value = referenceValue;
     }
 
@@ -24,37 +31,25 @@ document.addEventListener('DOMContentLoaded', function () {
         overlayModale.style.display = 'none';
     }
 
-    overlayModale.addEventListener('click', function (event) {
+    overlayModale.addEventListener('click', function () {
         closeModal();
     });
 
     // Écouteur d'événements pour ouvrir la modale lorsque le lien de menu est cliqué
-    const linkToModal = document.querySelector('#menu-item-18 a');
-    if (linkToModal) {
-        linkToModal.addEventListener('click', function (event) {
+    const linkToModal = Array.from(document.querySelectorAll('.menu-item-118 a'));
+    linkToModal.forEach(el => {
+        el.addEventListener('click', function (event) {
             event.preventDefault();
             openModal(""); // Aucune référence spécifique pour le menu
         });
-    }
+    });
 
     // Écouteur d'événements pour ouvrir la modale lorsque le bouton "Contact" est cliqué
     if (btnContact) {
         btnContact.addEventListener('click', function (event) {
             event.preventDefault();
-            if (this === btnContact) { // Vérifie si le clic provient du bouton de l'article
-                // Récupère la référence spécifique à cet article
-                const refValue = this.getAttribute('data-reference');
-                openModal(refValue);
-            } else {
-                openModal(""); // Ouvre la modal sans préremplir la référence
-            }
+            const refValue = this.getAttribute('data-reference') || "";
+            openModal(refValue);
         });
     }
-
-    // Écouteur d'événements pour fermer la modale lorsqu'on clique en dehors de celle-ci
-    document.addEventListener('click', function (event) {
-        if (!modal.contains(event.target) && event.target !== linkToModal && event.target !== btnContact) {
-            closeModal();
-        }
-    });
 });

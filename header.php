@@ -27,9 +27,9 @@
             ?>
 
             <div class="menu-burger-header">
-                <div class="ligne-menu-burger-header"></div>
-                <div class="ligne-menu-burger-header"></div>
-                <div class="ligne-menu-burger-header"></div>
+                <div class="ligne-menu-burger-header barre-pour-croix-1"></div>
+                <div class="ligne-menu-burger-header barre-pour-croix-2"></div>
+                <div class="ligne-menu-burger-header barre-pour-croix-3"></div>
             </div>
 
             <div class="menu-burger-header-content">

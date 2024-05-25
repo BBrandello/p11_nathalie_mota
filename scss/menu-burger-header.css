@@ -45,4 +45,17 @@
     color: #fff;
     font-size: 44px;
   }
+  #header .menu-burger-header-open {
+    display: flex;
+    justify-content: center;
+  }
+  #header .menu-burger-header-open .barre-pour-croix-1 {
+    transform: rotate(-45deg) translateX(-2px);
+  }
+  #header .menu-burger-header-open .barre-pour-croix-2 {
+    opacity: 0;
+  }
+  #header .menu-burger-header-open .barre-pour-croix-3 {
+    transform: rotate(45deg) translateX(-2px);
+  }
 }/*# sourceMappingURL=menu-burger-header.css.map */
