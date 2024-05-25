@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', function () {
         overlayModale.style.display = 'block';
         // Préremplir le champ "RÉF. PHOTO" avec la valeur de la référence dans le formulaire Contact Form 7
         refPhotoInput.value = referenceValue;
+
+        // Fermer le menu burger si modale ouverte
+        menuContent.classList.remove('menu-burger-header-content-open');
+        menuBurger.classList.remove('menu-burger-header-open');
     }
 
     // Fonction pour fermer la modale

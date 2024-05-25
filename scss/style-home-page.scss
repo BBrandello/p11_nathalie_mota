@@ -21,8 +21,8 @@
             justify-content: space-between;
         
             #filtre-categories,
-            #filtre-format,
-            #filtre-date {
+            #filtre-formats,
+            #filtre-dates {
                 font-family: 'Poppins';
                 font-weight: 500;
                 font-size: 12px;
@@ -33,7 +33,7 @@
                 border: solid 2px #d8d8d8;
             }
 
-            @media (max-width: "425px") {
+            @media (max-width: "768px") {
                 margin-top: 24px;
                 flex-direction: column;
                 gap: 6px;
@@ -65,7 +65,7 @@
                 object-fit: cover;
             }
 
-            @media (max-width: "425px") {
+            @media (max-width: "768px") {
                 a {
                     width: 100%;
                 }
@@ -77,7 +77,7 @@
         }
     }
 
-    @media (max-width: "425px") {
+    @media (max-width: "768px") {
         margin-bottom: 40px;
     }
 }

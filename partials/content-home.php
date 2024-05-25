@@ -9,21 +9,21 @@
             <div>
                 <select id="filtre-categories">
                     <option value="">Catégories</option>
-                    <option value="filtre-categorie-reception">Réception</option>
-                    <option value="filtre-categorie-mariage">Mariage</option>
-                    <option value="filtre-categorie-concert">Concert</option>
-                    <option value="filtre-categorie-television">Télévision</option>
+                    <option value="reception">Réception</option>
+                    <option value="mariage">Mariage</option>
+                    <option value="concert">Concert</option>
+                    <option value="television">Télévision</option>
                 </select>
 
-                <select id="filtre-format">
+                <select id="filtre-formats">
                     <option value="">Formats</option>
-                    <option value="filtre-format-paysage">Paysage</option>
-                    <option value="filtre-format-portrait">Portrait</option>
+                    <option value="paysage">Paysage</option>
+                    <option value="portrait">Portrait</option>
                 </select>
             </div>
 
             <div>
-                <select id="filtre-date">
+                <select id="filtre-dates">
                     <option value="date-recente">Plus récentes</option>
                     <option value="date-ancienne">Plus anciennes</option>
                 </select>
@@ -33,7 +33,7 @@
         <?php
         $args = array(
             'post_type' => 'photo',
-            'posts_per_page' => -1, // Récupérer tous les articles
+            'posts_per_page' => -1,
         );
 
         $articles = get_posts($args);
