@@ -53,6 +53,7 @@
 }
 .modal .modal-content .wpcf7 .message-modal .wpcf7-form-control {
   height: 210px;
+  resize: none;
 }
 .modal .modal-content .wpcf7-submit {
   font-family: "Poppins", sans-serif;
