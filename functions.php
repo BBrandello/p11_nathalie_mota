@@ -8,6 +8,7 @@ function nathalie_mota_register_styles_and_scripts()
     wp_enqueue_style('style_menu_burger_header', get_template_directory_uri() . '/scss/menu-burger-header.css', array(), '1.0');
     wp_enqueue_style('style_single_photo', get_template_directory_uri() . '/scss/style-single-photo.css', array(), '1.0');
     wp_enqueue_style('style_home_page', get_template_directory_uri() . '/scss/style-home-page.css', array(), '1.0');
+    wp_enqueue_style('style_lightbox', get_template_directory_uri() . '/scss/lightbox.css', array(), '1.0');
 
     // Enregistrement jQuery
     wp_enqueue_script('jquery');
@@ -21,6 +22,9 @@ function nathalie_mota_register_styles_and_scripts()
 
     //Enregistrement du script JavaScript du load-more de la page d'accueil
     wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more-content-home.js', array('jquery'), '1.0', true);
+
+    //Enregistrement du script JavaSript de la lightbox
+    wp_enqueue_script('lightbox-script', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), '1.0', true);
 
     // Passer des variables PHP vers JavaScript
     wp_localize_script(
@@ -124,12 +128,37 @@ function charger_plus_articles()
     check_ajax_referer('load_more_nonce', 'nonce');
 
     $paged = isset($_POST['page']) ? sanitize_text_field($_POST['page']) : 1;
+    $categories = isset($_POST['categorie']) ? sanitize_text_field($_POST['categorie']) : '';
+    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+    $date = isset($_POST['date']) ? sanitize_text_field($_POST['date']) : '';
 
     $args = array(
         'post_type' => 'photo',
         'posts_per_page' => 8, // Charger 8 articles à la fois
         'paged' => $paged, // Page actuelle
     );
+
+    if ($categories) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'categorie', // Utilisation du slug de la taxonomie des catégories
+            'field' => 'slug',
+            'terms' => $categories,
+        );
+    }
+
+    if ($format) {
+        $args['tax_query'][] = array(
+            'taxonomy' => 'format', // Utilisation du slug de la taxonomie de format
+            'field' => 'slug',
+            'terms' => $format,
+        );
+    }
+
+    if ($date == 'date-recente') {
+        $args['order'] = 'DESC';
+    } elseif ($date == 'date-ancienne') {
+        $args['order'] = 'ASC';
+    }
 
     $query = new WP_Query($args);
 
@@ -142,6 +171,8 @@ function charger_plus_articles()
             }
         }
         wp_reset_postdata();
+    } else {
+        echo '';
     }
 
     wp_die();

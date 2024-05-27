@@ -29,6 +29,5 @@ jQuery(document).ready(function ($) {
         fetchFilteredPosts();
     });
 
-    // Fetch posts initially on page load
     fetchFilteredPosts();
 });

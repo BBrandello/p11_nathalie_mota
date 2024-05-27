@@ -4,6 +4,8 @@ jQuery(document).ready(function ($) {
         var page = button.data('page');
         var newPage = page + 1;
         var nonce = ajax_object.load_more_nonce;
+        var categorie = $('#filtre-categories').val();
+        var format = $('#filtre-formats').val();
 
         $.ajax({
             url: ajax_object.ajax_url,
@@ -11,7 +13,9 @@ jQuery(document).ready(function ($) {
             data: {
                 action: 'load_more_posts',
                 page: newPage,
-                nonce: nonce
+                nonce: nonce,
+                categorie: categorie,
+                format: format
             },
             beforeSend: function () {
                 button.text('Chargement...');
@@ -20,12 +24,9 @@ jQuery(document).ready(function ($) {
                 if (response) {
                     $('.photos-home-header').append(response);
                     button.data('page', newPage);
-                    if ($(response).find('.article').length < 9) {
-                        button.hide();
-                    } else {
-                        button.show();
-                    }
                     button.text('Charger plus');
+                } else {
+                    button.hide();
                 }
             },
             error: function () {
@@ -34,5 +35,3 @@ jQuery(document).ready(function ($) {
         });
     });
 });
-
-
