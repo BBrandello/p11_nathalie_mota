@@ -17,11 +17,8 @@ jQuery(document).ready(function ($) {
                 categorie: categorie,
                 format: format
             },
-            beforeSend: function () {
-                button.text('Chargement...');
-            },
             success: function (response) {
-                if (response) {
+                if (response.trim() != '') {
                     $('.photos-home-header').append(response);
                     button.data('page', newPage);
                     button.text('Charger plus');
@@ -33,5 +30,11 @@ jQuery(document).ready(function ($) {
                 button.text('Erreur lors du chargement.');
             }
         });
+    });
+
+    // Réinitialise le bouton lorsque la catégorie ou le format est modifié
+    $('#filtre-categories, #filtre-formats').on('change', function () {
+        $('#charger-plus-content-home').show();
+        $('#charger-plus-content-home').data('page', 1);
     });
 });

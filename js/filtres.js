@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
             },
             success: function (response) {
                 $('.photos-home-header').html(response);
-                $('#charger-plus-content-home').data('page', 1); // Reset the page number
+                $('#charger-plus-content-home').data('page', 1);
             },
             error: function (error) {
                 console.log('Erreur:', error);

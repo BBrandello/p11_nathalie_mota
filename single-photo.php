@@ -48,9 +48,21 @@ while (have_posts()):
 			</div>
 		</div>
 
-		<div class="contact-single-photo">
-			<p>Cette photo vous intéresse ?</p>
-			<button class="btn-contact-single-photo" data-reference="<?php the_field('reference'); ?>">Contact</button>
+		<div class="preview-contact-single-photo">
+			<div class="contact-single-photo">
+				<p>Cette photo vous intéresse ?</p>
+				<button class="btn-contact-single-photo" data-reference="<?php the_field('reference'); ?>">Contact</button>
+			</div>
+			<div class="preview-single-photo">
+				<?php get_template_part('partials/preview', 'single-photo'); ?>
+			</div>
+		</div>
+
+		<h3>Vous aimerez aussi</h3>
+		<div class="photos-apparentes">
+			<?php
+			set_query_var('categories', $categories);
+			get_template_part('partials/photos', 'apparentes-single-photo'); ?>
 		</div>
 	</section>
 

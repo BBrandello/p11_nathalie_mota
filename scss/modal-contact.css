@@ -63,4 +63,9 @@
   border: solid 1px #d8d8d8;
   background-color: #d8d8d8;
   border-radius: 0;
+  cursor: pointer;
+}
+.modal .modal-content .wpcf7-submit:hover {
+  color: #fff;
+  background-color: #000;
 }/*# sourceMappingURL=modal-contact.css.map */

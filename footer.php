@@ -3,7 +3,7 @@
 <footer id="footer">
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
-            <span class="close-lightbox">&times;</span>
+            <!--<span class="close-lightbox">&times;</span>
             <img id="lightbox-images" src="" alt="">
             <div class="lightbox-infos">
                 <p id="image-lightbox-infos"></p>
@@ -11,7 +11,7 @@
                     <button id="image-precedente">&lt;</button>
                     <button id="image-suivante">&gt;</button>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 

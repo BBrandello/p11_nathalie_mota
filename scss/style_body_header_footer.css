@@ -77,6 +77,10 @@ body #header #menu-top-barre-header #menu-item-118 {
   text-decoration: none;
   color: #000;
 }
+#header a:hover,
+#footer a:hover {
+  font-weight: bold;
+}
 
 #menu-top-barre-header,
 #menu-footer {

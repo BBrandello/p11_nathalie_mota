@@ -41,19 +41,21 @@
 
         // Vérifie s'il y a des articles
         if ($articles->have_posts()) {
-            // code à exécuter si des articles sont trouvés
+            // Affiche les articles
             echo '<div class="photos-home-header">';
-            foreach ($articles as $post) {
-                setup_postdata($post);
-                $image = get_the_post_thumbnail_url($post, 'full');
+            while ($articles->have_posts()) {
+                $articles->the_post();
+                $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                // Vérifie si l'image existe
                 if ($image) {
-                    echo '<a href="' . esc_url(get_permalink()) . '"><img src="' . esc_url($image) . '" alt="' . get_the_title() . '"></a>';
+                    // Affiche l'image avec le lien vers l'article
+                    echo '<a href="' . esc_url(get_permalink()) . '"><img src="' . esc_url($image) . '" alt="' . esc_attr(get_the_title()) . '"></a>';
                 }
             }
             echo '</div>';
             wp_reset_postdata();
         } else {
-            // code à exécuter si aucun article n'est trouvé
+            // Aucun article trouvé
             echo 'Aucun article trouvé.';
         }
         ?>

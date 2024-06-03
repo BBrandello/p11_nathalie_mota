@@ -89,6 +89,11 @@
         margin: 60px 0;
         cursor: pointer;
 
+        &:hover {
+            color: #fff;
+            background-color: #000;
+        }
+
         @media (max-width: 768px) {
             margin: 60px 0 30px 0
         }

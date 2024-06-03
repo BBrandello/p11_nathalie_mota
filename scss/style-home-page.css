@@ -82,6 +82,10 @@
   margin: 60px 0;
   cursor: pointer;
 }
+.article-content-home #charger-plus-content-home:hover {
+  color: #fff;
+  background-color: #000;
+}
 @media (max-width: 768px) {
   .article-content-home #charger-plus-content-home {
     margin: 60px 0 30px 0;
