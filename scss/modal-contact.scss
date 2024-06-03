@@ -50,12 +50,8 @@
                 }
 
             .message-modal {
-                height: 210px;
-
-                .wpcf7-form-control-wrap {
-                    height: 210px;
-                }
-
+                text-transform: uppercase;
+                
                 .wpcf7-form-control {
                     height: 210px;
                     resize: none;
@@ -63,7 +59,7 @@
             }
 
             &-submit {
-                font-family: 'Poppins', sans-serif;
+                font-family: 'Space_Mono', sans-serif;
                 font-size: 12px;
                 height: 50px;
                 width: 272px;

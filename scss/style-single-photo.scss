@@ -65,6 +65,7 @@
             }
             
             button {
+                font-family: 'Space_Mono', sans-serif;
                 width: 40%;
                 height: 60px;
                 font-size: 18px;
@@ -159,7 +160,7 @@
                 flex-wrap: wrap;
 
                 a {
-                    width: calc(50% - 20px);
+                    width: calc(50% - 10px);
                     box-sizing: border-box;
                     margin-top: 40px;
                 }
