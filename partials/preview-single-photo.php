@@ -8,27 +8,30 @@ $next_post = get_next_post(false, '', 'category');
 ?>
 
 <div class="navigation-preview-single-photo">
-    <?php if ($prev_post): ?>
-        <div class="prev-preview">
-            <?php
-            $prev_thumbnail = "";
-            if ($prev_post) {
-                $prev_thumbnail = get_the_post_thumbnail_url($prev_post->ID, 'thumbnail');
-            }
+    <div class="prev-preview">
+        <?php
+        $prev_thumbnail = "";
+        if ($prev_post) {
+            $prev_thumbnail = get_the_post_thumbnail_url($prev_post->ID, 'thumbnail');
+        }
 
-            $next_thumbnail = "";
-            if ($next_post) {
-                $next_thumbnail = get_the_post_thumbnail_url($next_post->ID, 'thumbnail');
-            }
-            ?>
-            <?php if ($prev_thumbnail): ?>
-                <div class="prev-thumbnail">
-                    <img src="<?php echo $prev_thumbnail; ?>" id="preview-thumbnail"
-                        data-original-thumbnail="<?php echo $prev_thumbnail; ?>">
-                </div>
-            <?php endif; ?>
-        </div>
-    <?php endif; ?>
+        $next_thumbnail = "";
+        if ($next_post) {
+            $next_thumbnail = get_the_post_thumbnail_url($next_post->ID, 'thumbnail');
+        }
+        ?>
+        <?php if ($prev_thumbnail): ?>
+            <div class="prev-thumbnail">
+                <img src="<?php echo $prev_thumbnail; ?>" id="preview-thumbnail"
+                    data-original-thumbnail="<?php echo $prev_thumbnail; ?>">
+            </div>
+        <?php elseif ($next_thumbnail): ?>
+            <div class="prev-thumbnail">
+                <img src="<?php echo $next_thumbnail; ?>" id="preview-thumbnail"
+                    data-original-thumbnail="<?php echo $next_thumbnail; ?>">
+            </div>
+        <?php endif; ?>
+    </div>
 
     <div class="prev-and-next-post">
         <?php if ($next_post): ?>

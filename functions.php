@@ -165,10 +165,7 @@ function charger_plus_articles()
     if ($query->have_posts()) {
         while ($query->have_posts()) {
             $query->the_post();
-            $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-            if ($image) {
-                echo '<a href="' . esc_url(get_permalink()) . '"><img src="' . esc_url($image) . '" alt="' . get_the_title() . '"></a>';
-            }
+            get_template_part('partials/detail-content-home');
         }
         wp_reset_postdata();
     } else {
