@@ -98,47 +98,42 @@
 
                 .prev-and-next-post {
                     display: flex;
-                    justify-content: space-between;
                 
                     .prev-post,
                     .next-post {
                         position: relative;
+                    }
                 
-                        .fa-arrow-left-long,
-                        .fa-arrow-right-long {
-                            font-size: 18px;
-                            color: #000;
-                            transition: all 0.3s ease;
-                        }
+                    .prev-post {
+                        margin-right: auto;
+                    }
                 
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            top: 36%;
-                            left: 6%;
-                            width: 0;
-                            height: 3px;
-                            background-color: #000;
-                            transition: all 0.3s ease;
-                        }
+                    .next-post {
+                        margin-left: auto;
+                    }
                 
+                    .fa-arrow-left-long,
+                    .fa-arrow-right-long {
+                        font-size: 18px;
+                        color: #000;
+
                         &:hover {
-                            i {
-                                transform: scale(1.2);
-                            }
-                
-                            &::before {
-                                width: calc(100% + 20px);
-                            }
+                            transform: scale(1.5);
                         }
                     }
-
-                    .next-post::before {
-                        left: auto;
-                        right: 6%;
+                
+                    &:only-child {
+                        justify-content: flex-start;
+                
+                        .prev-post {
+                            margin-right: 0;
+                        }
+                
+                        .next-post {
+                            margin-left: 0;
+                        }
                     }
                 }
-                
             }
         }
     }

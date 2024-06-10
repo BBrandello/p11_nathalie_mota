@@ -3,12 +3,11 @@ jQuery(document).ready(function ($) {
     var currentIndex = 0;
 
     // Fonction pour ouvrir la lightbox
-    function openLightbox(index) {
-        currentIndex = index;
+    function openLightbox(imageSrc, imageInfos, orientation) {
         var $image = $('#lightbox-images');
-        $image.attr('src', images[index].src);
-        $image.removeClass('portrait landscape').addClass(images[index].orientation);
-        $('#image-lightbox-infos').html(images[index].infos);
+        $image.attr('src', imageSrc);
+        $image.removeClass('portrait landscape').addClass(orientation);
+        $('#image-lightbox-infos').html(imageInfos);
         $('#lightbox').fadeIn();
     }
 
@@ -24,8 +23,12 @@ jQuery(document).ready(function ($) {
     // Ouvrir la lightbox au clic sur l'icône fa-expand (délégation d'événements)
     $(document).on('click', '.photos-home-header .fa-expand', function (e) {
         e.preventDefault();
-        var index = $(this).closest('a').index('.photos-home-header a');
-        openLightbox(index);
+        var $parent = $(this).closest('a');
+        var imageSrc = $parent.find('img').attr('src');
+        var imageInfos = $parent.find('.ref-cat-hover-single-photo').html();
+        var isPortrait = $parent.find('img').height() > $parent.find('img').width();
+        var orientation = isPortrait ? 'portrait' : 'landscape';
+        openLightbox(imageSrc, imageInfos, orientation);
     });
 
     // Fermer la lightbox
@@ -36,11 +39,13 @@ jQuery(document).ready(function ($) {
     // Navigation entre les images
     $(document).on('click', '.btn-text-prec-lightbox', function () {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
-        openLightbox(currentIndex);
+        var { src, infos, orientation } = images[currentIndex];
+        openLightbox(src, infos, orientation);
     });
 
     $(document).on('click', '.btn-text-suiv-lightbox', function () {
         currentIndex = (currentIndex + 1) % images.length;
-        openLightbox(currentIndex);
+        var { src, infos, orientation } = images[currentIndex];
+        openLightbox(src, infos, orientation);
     });
 });
