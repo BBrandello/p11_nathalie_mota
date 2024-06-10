@@ -3,8 +3,8 @@ $args = array(
     'order_by' => 'post_date',
     'order' => 'DESC',
 );
-$prev_post = get_previous_post(false, '', 'category', $args);
-$next_post = get_next_post(false, '', 'category', $args);
+$prev_post = get_previous_post(false, '', 'category');
+$next_post = get_next_post(false, '', 'category');
 ?>
 
 <div class="navigation-preview-single-photo">
