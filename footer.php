@@ -3,15 +3,23 @@
 <footer id="footer">
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
-            <!--<span class="close-lightbox">&times;</span>
-            <img id="lightbox-images" src="" alt="">
-            <div class="lightbox-infos">
-                <p id="image-lightbox-infos"></p>
-                <div class="lightbox-navigation">
-                    <button id="image-precedente">&lt;</button>
-                    <button id="image-suivante">&gt;</button>
+            <div class="btn-img-infos-lightbox">
+                <div class="btn-image-lightbox">
+                    <div class="btn-text-prec-lightbox">
+                        <i id="image-precedente" class="fa-solid fa-arrow-left-long lightbox-nav-btn"></i>
+                        <p>Précédente</p>
+                    </div>
+                    <img id="lightbox-images" src="" alt="Lightbox Image">
+                    <div class="btn-text-suiv-lightbox">
+                        <i id="image-suivante" class="fa-solid fa-arrow-right-long lightbox-nav-btn"></i>
+                        <p>Suivante</p>
+                    </div>
                 </div>
-            </div>-->
+                <div id="image-lightbox-infos">
+                    <?php get_template_part('partials/ref', 'cat-articles'); ?>
+                </div>
+            </div>
+            <div class="close-lightbox"><i class="fa-solid fa-xmark"></i></div>
         </div>
     </div>
 

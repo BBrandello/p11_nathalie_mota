@@ -26,6 +26,9 @@ function nathalie_mota_register_styles_and_scripts()
     //Enregistrement du script JavaSript de la lightbox
     wp_enqueue_script('lightbox-script', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), '1.0', true);
 
+    // Enregistrement du script JavaSript pour preview-single-photo
+    wp_enqueue_script('preview-single-photo', get_template_directory_uri() . '/js/preview-single-photo.js', array('jquery'), '1.0', true);
+
     // Passer des variables PHP vers JavaScript
     wp_localize_script(
         'filtres',
@@ -98,16 +101,13 @@ function filtres_articles()
     }
 
     // Effectuer la requête pour récupérer les articles filtrés
-    $query = new WP_Query($args);
+    $articles = new WP_Query($args);
 
     // Afficher les articles ou un message si aucun article n'est trouvé
-    if ($query->have_posts()) {
-        while ($query->have_posts()) {
-            $query->the_post();
-            $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-            if ($image) {
-                echo '<a href="' . esc_url(get_permalink()) . '"><img src="' . esc_url($image) . '" alt="' . get_the_title() . '"></a>';
-            }
+    if ($articles->have_posts()) {
+        while ($articles->have_posts()) {
+            $articles->the_post();
+            get_template_part('partials/detail-content-home');
         }
         wp_reset_postdata();
     } else {

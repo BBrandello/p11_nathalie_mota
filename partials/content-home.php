@@ -37,27 +37,7 @@
             'paged' => 1,
         );
 
-        $articles = new WP_Query($args);
-
-        // Vérifie s'il y a des articles
-        if ($articles->have_posts()) {
-            // Affiche les articles
-            echo '<div class="photos-home-header">';
-            while ($articles->have_posts()) {
-                $articles->the_post();
-                $image = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                // Vérifie si l'image existe
-                if ($image) {
-                    // Affiche l'image avec le lien vers l'article
-                    echo '<a href="' . esc_url(get_permalink()) . '"><img src="' . esc_url($image) . '" alt="' . esc_attr(get_the_title()) . '"></a>';
-                }
-            }
-            echo '</div>';
-            wp_reset_postdata();
-        } else {
-            // Aucun article trouvé
-            echo 'Aucun article trouvé.';
-        }
+        get_template_part('partials/affichage-articles', null, array('args' => $args));
         ?>
     </div>
     <button id="charger-plus-content-home" data-page="1">Charger plus</button>

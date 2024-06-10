@@ -29,5 +29,5 @@ jQuery(document).ready(function ($) {
         fetchFilteredPosts();
     });
 
-    fetchFilteredPosts();
+    //fetchFilteredPosts();
 });

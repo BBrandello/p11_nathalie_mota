@@ -52,19 +52,77 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            z-index: -1;
 
             a {
+                position: relative;
                 width: calc(50% - 20px);
                 box-sizing: border-box;
                 margin-top: 40px;
+                text-decoration: none;
+            
+                .fa-expand,
+                .fa-eye,
+                .ref-cat-hover-single-photo {
+                    display: none;
+                }
+            
+                img {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    object-fit: cover;
+                }
+            
+                &:hover {
+                    .fa-expand,
+                    .fa-eye,
+                    .ref-cat-hover-single-photo {
+                        display: block;
+                    }
+            
+                    .fa-expand {
+                        font-size: 24px;
+                        color: #fff;
+                        position: absolute;
+                        top: 4%;
+                        right: 4%;
+                        z-index: 1;
+                        border: solid #000 1px;
+                        border-radius: 50%;
+                        background-color: #000;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+            
+                    .fa-eye {
+                        font-size: 40px;
+                        color: #fff;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 1;
+                    }
+            
+                    .ref-cat-hover-single-photo {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 96%;
+                        position: absolute;
+                        bottom: 2%;
+                        left: 2%;
+                        color: #fff;
+                        z-index: 1;
+                        font-family: 'Poppins';
+                        text-transform: uppercase;
+                    }
+                }
             }
-        
-            img {
-                width: 100%;
-                height: auto;
-                aspect-ratio: 1 / 1;
-                object-fit: cover;
-            }
+            
 
             @media (max-width: 768px) {
                 a {
