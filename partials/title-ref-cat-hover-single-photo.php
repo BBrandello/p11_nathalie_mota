@@ -1,7 +1,10 @@
 <?php
+// Affiche le champ personnalisé 'titre'
+echo '<div class="titre-hover-single-photo">';
+the_title();
+echo '</div>';
 
-// Affiche le champ personnalisé 'reference'
-echo '<div>';
+echo '<div class="ref-hover-single-photo">';
 the_field('reference');
 echo '</div>';
 
@@ -15,4 +18,3 @@ if ($categories && !is_wp_error($categories)) {
     }
     echo implode(', ', $categories_names);
 }
-echo '</div>';

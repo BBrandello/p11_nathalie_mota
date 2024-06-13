@@ -15,9 +15,7 @@
                         <p>Suivante</p>
                     </div>
                 </div>
-                <div id="image-lightbox-infos">
-                    <?php get_template_part('partials/ref', 'cat-articles'); ?>
-                </div>
+                <div id="image-lightbox-infos"></div>
             </div>
             <div class="close-lightbox"><i class="fa-solid fa-xmark"></i></div>
         </div>

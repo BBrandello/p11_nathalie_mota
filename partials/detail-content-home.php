@@ -7,9 +7,11 @@ if ($image) {
     echo '<i class="fa-solid fa-expand"></i>';
     echo '<img src="' . esc_url($image) . '" alt="' . esc_attr(get_the_title()) . '">';
     echo '<i class="fa-regular fa-eye"></i>';
-    echo '<div class="ref-cat-hover-single-photo">';
+    echo '<div class="titre-cat-hover-single-photo">';
 
-    get_template_part('partials/ref-cat-articles');
+    get_template_part('partials/title-ref-cat-hover-single-photo');
+
+    echo '</div>';
 
     echo '</div>';
     echo '</a>';

@@ -63,6 +63,9 @@
   position: relative;
   left: 21%;
 }
+.lightbox .lightbox-content .btn-img-infos-lightbox #image-lightbox-infos .titre-hover-single-photo {
+  display: none;
+}
 .lightbox .lightbox-content .close-lightbox {
   position: absolute;
   top: 15px;

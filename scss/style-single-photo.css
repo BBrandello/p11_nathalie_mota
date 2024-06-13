@@ -136,7 +136,12 @@
 }
 #single-photo .photos-apparentes .photos-home-header a .fa-expand,
 #single-photo .photos-apparentes .photos-home-header a .fa-eye,
-#single-photo .photos-apparentes .photos-home-header a .ref-cat-hover-single-photo {
+#single-photo .photos-apparentes .photos-home-header a .titre-cat-hover-single-photo {
+  display: none;
+}
+#single-photo .photos-apparentes .photos-home-header a .fa-expand .ref-hover-single-photo,
+#single-photo .photos-apparentes .photos-home-header a .fa-eye .ref-hover-single-photo,
+#single-photo .photos-apparentes .photos-home-header a .titre-cat-hover-single-photo .ref-hover-single-photo {
   display: none;
 }
 #single-photo .photos-apparentes .photos-home-header a img {
@@ -146,12 +151,8 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
-#single-photo .photos-apparentes .photos-home-header a:hover .fa-expand,
-#single-photo .photos-apparentes .photos-home-header a:hover .fa-eye,
-#single-photo .photos-apparentes .photos-home-header a:hover .ref-cat-hover-single-photo {
-  display: block;
-}
 #single-photo .photos-apparentes .photos-home-header a:hover .fa-expand {
+  display: block;
   font-size: 24px;
   color: #fff;
   position: absolute;
@@ -168,6 +169,7 @@
   align-items: center;
 }
 #single-photo .photos-apparentes .photos-home-header a:hover .fa-eye {
+  display: block;
   font-size: 40px;
   color: #fff;
   position: absolute;
@@ -176,7 +178,7 @@
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-#single-photo .photos-apparentes .photos-home-header a:hover .ref-cat-hover-single-photo {
+#single-photo .photos-apparentes .photos-home-header a:hover .titre-cat-hover-single-photo {
   display: flex;
   justify-content: space-between;
   width: 96%;
@@ -187,6 +189,12 @@
   z-index: 1;
   font-family: "Poppins";
   text-transform: uppercase;
+}
+#single-photo .photos-apparentes .photos-home-header a:hover .titre-cat-hover-single-photo {
+  display: none;
+}
+#single-photo .photos-apparentes .photos-home-header a:hover .fa-eye:hover + .titre-cat-hover-single-photo {
+  display: flex;
 }
 @media (max-width: 768px) {
   #single-photo .photos-apparentes .photos-home-header a {

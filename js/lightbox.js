@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
     // Récupérer les informations sur les images au chargement de la page
     $('.photos-home-header a').each(function () {
         var imageSrc = $(this).find('img').attr('src');
-        var imageInfos = $(this).find('.ref-cat-hover-single-photo').html();
+        var imageInfos = $(this).find('.titre-cat-hover-single-photo').html();
         var isPortrait = $(this).find('img').height() > $(this).find('img').width();
         var orientation = isPortrait ? 'portrait' : 'landscape';
         images.push({ src: imageSrc, infos: imageInfos, orientation: orientation });
@@ -25,7 +25,7 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
         var $parent = $(this).closest('a');
         var imageSrc = $parent.find('img').attr('src');
-        var imageInfos = $parent.find('.ref-cat-hover-single-photo').html();
+        var imageInfos = $parent.find('.titre-cat-hover-single-photo').html();
         var isPortrait = $parent.find('img').height() > $parent.find('img').width();
         var orientation = isPortrait ? 'portrait' : 'landscape';
         openLightbox(imageSrc, imageInfos, orientation);

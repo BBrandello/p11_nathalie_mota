@@ -153,35 +153,34 @@
             justify-content: space-between;
             flex-wrap: wrap;
             z-index: -1;
-    
+        
             a {
                 position: relative;
                 width: calc(50% - 20px);
                 box-sizing: border-box;
                 margin-top: 40px;
                 text-decoration: none;
-                
+        
                 .fa-expand,
                 .fa-eye,
-                .ref-cat-hover-single-photo {
+                .titre-cat-hover-single-photo {
                     display: none;
+
+                    .ref-hover-single-photo {
+                        display: none;
+                    }
                 }
-                
+        
                 img {
                     width: 100%;
                     height: auto;
                     aspect-ratio: 1 / 1;
                     object-fit: cover;
                 }
-                
+        
                 &:hover {
-                    .fa-expand,
-                    .fa-eye,
-                    .ref-cat-hover-single-photo {
-                        display: block;
-                    }
-                
                     .fa-expand {
+                        display: block;
                         font-size: 24px;
                         color: #fff;
                         position: absolute;
@@ -197,8 +196,9 @@
                         justify-content: center;
                         align-items: center;
                     }
-                
+        
                     .fa-eye {
+                        display: block;
                         font-size: 40px;
                         color: #fff;
                         position: absolute;
@@ -207,8 +207,8 @@
                         transform: translate(-50%, -50%);
                         z-index: 1;
                     }
-                
-                    .ref-cat-hover-single-photo {
+        
+                    .titre-cat-hover-single-photo {
                         display: flex;
                         justify-content: space-between;
                         width: 96%;
@@ -221,12 +221,20 @@
                         text-transform: uppercase;
                     }
                 }
+        
+                &:hover .titre-cat-hover-single-photo {
+                    display: none;
+                }
+        
+                &:hover .fa-eye:hover + .titre-cat-hover-single-photo {
+                    display: flex;
+                }
             }
-                
+        
             @media (max-width: 768px) {
                 a {
-                        width: 100%;
-                        margin-top: 24px;
+                    width: 100%;
+                    margin-top: 24px;
                 }
             }
         }

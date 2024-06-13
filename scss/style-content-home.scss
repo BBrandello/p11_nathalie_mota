@@ -73,7 +73,7 @@
             }
         }
         
-        .photos-home-header {
+        /*.photos-home-header {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
@@ -149,6 +149,96 @@
             }
             
 
+            @media (max-width: 768px) {
+                a {
+                    width: 100%;
+                    margin-top: 24px;
+                }
+            }
+        }*/
+        .photos-home-header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            z-index: -1;
+        
+            a {
+                position: relative;
+                width: calc(50% - 20px);
+                box-sizing: border-box;
+                margin-top: 40px;
+                text-decoration: none;
+        
+                .fa-expand,
+                .fa-eye,
+                .titre-cat-hover-single-photo {
+                    display: none;
+
+                    .ref-hover-single-photo {
+                        display: none;
+                    }
+                }
+        
+                img {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1 / 1;
+                    object-fit: cover;
+                }
+        
+                &:hover {
+                    .fa-expand {
+                        display: block;
+                        font-size: 24px;
+                        color: #fff;
+                        position: absolute;
+                        top: 4%;
+                        right: 4%;
+                        z-index: 1;
+                        border: solid #000 1px;
+                        border-radius: 50%;
+                        background-color: #000;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+        
+                    .fa-eye {
+                        display: block;
+                        font-size: 40px;
+                        color: #fff;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 1;
+                    }
+        
+                    .titre-cat-hover-single-photo {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 96%;
+                        position: absolute;
+                        bottom: 2%;
+                        left: 2%;
+                        color: #fff;
+                        z-index: 1;
+                        font-family: 'Poppins';
+                        text-transform: uppercase;
+                    }
+                }
+        
+                &:hover .titre-cat-hover-single-photo {
+                    display: none;
+                }
+        
+                &:hover .fa-eye:hover + .titre-cat-hover-single-photo {
+                    display: flex;
+                }
+            }
+        
             @media (max-width: 768px) {
                 a {
                     width: 100%;
