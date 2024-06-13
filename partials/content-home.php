@@ -6,7 +6,7 @@
 
     <div class="filtres-articles-content-home">
         <div class="filtres">
-            <div>
+            <div class="left-filtres-categorie">
                 <select id="filtre-categories">
                     <option value="">Catégories</option>
                     <option value="reception">Réception</option>
@@ -22,7 +22,7 @@
                 </select>
             </div>
 
-            <div>
+            <div class="right-filtres-categorie">
                 <select id="filtre-dates">
                     <option value="date-recente">Plus récentes</option>
                     <option value="date-ancienne">Plus anciennes</option>

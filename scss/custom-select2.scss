@@ -1,0 +1,11 @@
+.custom-dropdown .select2-results__option {
+    &:hover {
+        background-color: red !important;
+        color: white !important;
+    }
+
+    &--highlighted {
+        background-color: red !important;
+        color: white !important;
+    }
+}

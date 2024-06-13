@@ -8,7 +8,12 @@ function nathalie_mota_register_styles_and_scripts()
     wp_enqueue_style('style_menu_burger_header', get_template_directory_uri() . '/scss/menu-burger-header.css', array(), '1.0');
     wp_enqueue_style('style_single_photo', get_template_directory_uri() . '/scss/style-single-photo.css', array(), '1.0');
     wp_enqueue_style('style_content_home', get_template_directory_uri() . '/scss/style-content-home.css', array(), '1.0');
+    wp_enqueue_style('custom-select2-style', get_template_directory_uri() . '/scss/custom-select2.css', array(), '1.0');
     wp_enqueue_style('style_lightbox', get_template_directory_uri() . '/scss/lightbox.css', array(), '1.0');
+
+    // Enregistrement des styles et scripts Select2
+    wp_enqueue_style('select2-style', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css', array(), '4.1.0');
+    wp_enqueue_script('select2-script', 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js', array('jquery'), '4.1.0', true);
 
     // Enregistrement jQuery
     wp_enqueue_script('jquery');
