@@ -1,7 +1,7 @@
 <div class="related-photos">
     <?php
 
-    $categories = get_query_var('categories');
+    $categories = get_query_var('categorie');
     if ($categories && !is_wp_error($categories)) {
 
         $category_ids = wp_list_pluck($categories, 'term_id');

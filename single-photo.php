@@ -61,7 +61,7 @@ while (have_posts()):
 		<h3>Vous aimerez aussi</h3>
 		<div class="photos-apparentes">
 			<?php
-			set_query_var('categories', $categories);
+			set_query_var('categorie', $categories);
 			get_template_part('partials/photos', 'apparentes-single-photo'); ?>
 		</div>
 	</section>
