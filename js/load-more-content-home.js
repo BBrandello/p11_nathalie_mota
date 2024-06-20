@@ -4,8 +4,9 @@ jQuery(document).ready(function ($) {
         var page = button.data('page');
         var newPage = page + 1;
         var nonce = ajax_object.load_more_nonce;
-        var categorie = $('#filtre-categories').val();
+        var category = $('#filtre-categories').val();
         var format = $('#filtre-formats').val();
+        var date = $('#filtre-dates').val();
 
         $.ajax({
             url: ajax_object.ajax_url,
@@ -14,8 +15,9 @@ jQuery(document).ready(function ($) {
                 action: 'load_more_posts',
                 page: newPage,
                 nonce: nonce,
-                categorie: categorie,
-                format: format
+                category: category,
+                format: format,
+                date: date
             },
             success: function (response) {
                 if (response.trim() != '') {
@@ -32,8 +34,8 @@ jQuery(document).ready(function ($) {
         });
     });
 
-    // Réinitialise le bouton lorsque la catégorie ou le format est modifié
-    $('#filtre-categories, #filtre-formats').on('change', function () {
+    // Réinitialise le bouton lorsque la catégorie, le format ou la date est modifié
+    $('#filtre-categories, #filtre-formats, #filtre-dates').on('change', function () {
         $('#charger-plus-content-home').show();
         $('#charger-plus-content-home').data('page', 1);
     });
