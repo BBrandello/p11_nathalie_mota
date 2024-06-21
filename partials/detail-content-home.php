@@ -12,7 +12,5 @@ if ($image) {
     get_template_part('partials/title-ref-cat-hover-single-photo');
 
     echo '</div>';
-
-    echo '</div>';
     echo '</a>';
 }
