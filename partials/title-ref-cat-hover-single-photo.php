@@ -18,3 +18,4 @@ if ($categories && !is_wp_error($categories)) {
     }
     echo implode(', ', $categories_names);
 }
+echo '</div>';
