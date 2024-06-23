@@ -1,5 +1,5 @@
 <?php
-$image = get_the_post_thumbnail_url(get_the_ID(), 'full');
+$image = get_the_post_thumbnail_url(get_the_ID(), 'large');
 // Vérifie si l'image existe
 if ($image) {
     // Affiche l'image avec le lien vers l'article

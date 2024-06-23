@@ -1,6 +1,6 @@
 <article class="article-content-home">
     <div class="photo-event-header">
-        <img src="<?php echo get_template_directory_uri(); ?>/images/img-header/photo-event-header.png"
+        <img src="<?php echo esc_url('http://nathalie-mota.local/wp-content/uploads/2024/04/photo-event-header.png'); ?>"
             alt="Photo Event">
     </div>
 
