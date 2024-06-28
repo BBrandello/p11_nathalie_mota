@@ -134,6 +134,9 @@
   margin-top: 40px;
   text-decoration: none;
 }
+#single-photo .photos-apparentes .photos-home-header a:hover img {
+  filter: brightness(30%);
+}
 #single-photo .photos-apparentes .photos-home-header a .fa-expand,
 #single-photo .photos-apparentes .photos-home-header a .fa-eye,
 #single-photo .photos-apparentes .photos-home-header a .titre-cat-hover-single-photo {
@@ -189,12 +192,6 @@
   z-index: 1;
   font-family: "Poppins";
   text-transform: uppercase;
-}
-#single-photo .photos-apparentes .photos-home-header a:hover .titre-cat-hover-single-photo {
-  display: none;
-}
-#single-photo .photos-apparentes .photos-home-header a:hover .fa-eye:hover + .titre-cat-hover-single-photo {
-  display: flex;
 }
 @media (max-width: 768px) {
   #single-photo .photos-apparentes .photos-home-header a {

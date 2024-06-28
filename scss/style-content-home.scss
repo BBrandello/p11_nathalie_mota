@@ -14,6 +14,7 @@
     
     .filtres-articles-content-home {
         max-width: 80%;
+        width: 80%;
 
         .filtres {
             margin-top: 80px;
@@ -93,6 +94,12 @@
                 box-sizing: border-box;
                 margin-top: 40px;
                 text-decoration: none;
+
+                &:hover {
+                    img {
+                        filter: brightness(30%);
+                    }
+                 }
         
                 .fa-expand,
                 .fa-eye,
@@ -110,7 +117,7 @@
                     aspect-ratio: 1 / 1;
                     object-fit: cover;
                 }
-        
+                
                 &:hover {
                     .fa-expand {
                         display: block;
@@ -153,14 +160,6 @@
                         font-family: 'Poppins';
                         text-transform: uppercase;
                     }
-                }
-        
-                &:hover .titre-cat-hover-single-photo {
-                    display: none;
-                }
-        
-                &:hover .fa-eye:hover + .titre-cat-hover-single-photo {
-                    display: flex;
                 }
             }
         

@@ -160,6 +160,12 @@
                 box-sizing: border-box;
                 margin-top: 40px;
                 text-decoration: none;
+
+                &:hover {
+                    img {
+                        filter: brightness(30%);
+                    }
+                }
         
                 .fa-expand,
                 .fa-eye,
@@ -220,14 +226,6 @@
                         font-family: 'Poppins';
                         text-transform: uppercase;
                     }
-                }
-        
-                &:hover .titre-cat-hover-single-photo {
-                    display: none;
-                }
-        
-                &:hover .fa-eye:hover + .titre-cat-hover-single-photo {
-                    display: flex;
                 }
             }
         

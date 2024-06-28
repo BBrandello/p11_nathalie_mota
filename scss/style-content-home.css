@@ -12,6 +12,7 @@
 }
 .article-content-home .filtres-articles-content-home {
   max-width: 80%;
+  width: 80%;
 }
 .article-content-home .filtres-articles-content-home .filtres {
   margin-top: 80px;
@@ -85,6 +86,9 @@
   margin-top: 40px;
   text-decoration: none;
 }
+.article-content-home .filtres-articles-content-home .photos-home-header a:hover img {
+  filter: brightness(30%);
+}
 .article-content-home .filtres-articles-content-home .photos-home-header a .fa-expand,
 .article-content-home .filtres-articles-content-home .photos-home-header a .fa-eye,
 .article-content-home .filtres-articles-content-home .photos-home-header a .titre-cat-hover-single-photo {
@@ -140,12 +144,6 @@
   z-index: 1;
   font-family: "Poppins";
   text-transform: uppercase;
-}
-.article-content-home .filtres-articles-content-home .photos-home-header a:hover .titre-cat-hover-single-photo {
-  display: none;
-}
-.article-content-home .filtres-articles-content-home .photos-home-header a:hover .fa-eye:hover + .titre-cat-hover-single-photo {
-  display: flex;
 }
 @media (max-width: 768px) {
   .article-content-home .filtres-articles-content-home .photos-home-header a {

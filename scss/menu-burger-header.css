@@ -4,7 +4,7 @@
 #header .menu-burger-header-content {
   display: none;
 }
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   #header .menu-burger-header {
     display: flex;
     flex-direction: column;

@@ -1,10 +1,17 @@
 @font-face {
   font-family: "Space_Mono";
   src: url("../google_fonts/Space_Mono/SpaceMono-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 @font-face {
   font-family: "Poppins";
   src: url("../google_fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("../google_fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
 }
 body {
   margin: 0;
@@ -31,7 +38,7 @@ body #header #menu-top-barre-header #menu-item-14,
 body #header #menu-top-barre-header #menu-item-118 {
   margin-left: 60px;
 }
-@media (max-width: 425px) {
+@media (max-width: 768px) {
   body #header #menu-top-barre-header {
     display: none;
   }

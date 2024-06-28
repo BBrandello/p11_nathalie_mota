@@ -4,6 +4,7 @@ echo '<div class="titre-hover-single-photo">';
 the_title();
 echo '</div>';
 
+// Affiche le champ personnalisé 'référence'
 echo '<div class="ref-hover-single-photo">';
 the_field('reference');
 echo '</div>';

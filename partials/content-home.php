@@ -1,7 +1,6 @@
 <article class="article-content-home">
     <div class="photo-event-header">
-        <img src="<?php echo esc_url('http://nathalie-mota.local/wp-content/uploads/2024/04/photo-event-header.png'); ?>"
-            alt="Photo Event">
+        <img src="<?php echo esc_url('/wp-content/uploads/2024/04/photo-event-header.png'); ?>" alt="Photo Event">
     </div>
 
     <div class="filtres-articles-content-home">
@@ -9,10 +8,15 @@
             <div class="left-filtres-categorie">
                 <select id="filtre-categories">
                     <option value="">Catégories</option>
-                    <option value="reception">Réception</option>
-                    <option value="mariage">Mariage</option>
-                    <option value="concert">Concert</option>
-                    <option value="television">Télévision</option>
+                    <?php
+                    $terms = get_terms('categorie');
+
+                    if (!empty($terms) && !is_wp_error($terms)) {
+                        foreach ($terms as $term) {
+                            echo '<option value="' . esc_attr($term->slug) . '">' . esc_html($term->name) . '</option>';
+                        }
+                    }
+                    ?>
                 </select>
 
                 <select id="filtre-formats">
