@@ -21,8 +21,15 @@
 
                 <select id="filtre-formats">
                     <option value="">Formats</option>
-                    <option value="paysage">Paysage</option>
-                    <option value="portrait">Portrait</option>
+                    <?php
+                    $formats = get_terms('format');
+
+                    if (!empty($formats) && !is_wp_error($formats)) {
+                        foreach ($formats as $format) {
+                            echo '<option value="' . esc_attr($format->slug) . '">' . esc_html($format->name) . '</option>';
+                        }
+                    }
+                    ?>
                 </select>
             </div>
 
